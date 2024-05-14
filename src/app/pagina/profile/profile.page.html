@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-back-button defaulthref="login" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Informações do Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  
+  <form  #f="ngForm" (ngSubmit)="atualizar(f)">
+    <!-- <ion-title>Informações do Perfil - {{dados.nomeUsuario}}</ion-title> -->
+    <ion-item>
+     
+      <ion-icon name="person-outline"></ion-icon>
+
+      <ion-input [disabled]="!editingEnabled" [(ngModel)]="dados.nomeUsuario" name="nome" type="text">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="mail-outline"></ion-icon>
+
+      <ion-input [disabled]="!editingEnabled" [(ngModel)]="dados.emailUsuario" name="email" type="text"
+        placeholder="Insira um novo Email">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="call-outline"></ion-icon>
+
+      <ion-input [disabled]="!editingEnabled" name="telefone" type="tel" placeholder="Insira um novo Telefone"
+        [(ngModel)]="dados.telefoneUsuario" (ionChange)="formatarTelefone()" (ionInput)="formatarTelefone()" pattern="[0-9]*" maxlength="15">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="id-card-outline"></ion-icon>
+      <ion-input disabled name="cpf" [(ngModel)]="dados.cpfUsuario" type="text" placeholder="CPF">
+
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="lock-closed-outline"></ion-icon>
+      <ion-input [disabled]="!editingEnabled" [(ngModel)]="dados.senhaUsuario" name="senha" type="password"
+        placeholder="Insira uma nova Senha">
+
+      </ion-input>
+    </ion-item>
+
+    <div class="edit-btns">
+      <ion-button size="big" fill="solid" shape="round" class="editbtn" [disabled]="editingEnabled"
+        (click)="enableEditing()">
+        editar
+      </ion-button>
+      <ion-button class="savebtn" size="big" fill="solid" shape="round" color="light" [disabled]="!editingEnabled"
+        (click)="atualizar(f)">Salvar</ion-button>
+    </div>
+  </form>
+
+</ion-content>

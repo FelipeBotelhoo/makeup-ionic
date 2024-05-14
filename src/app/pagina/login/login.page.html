@@ -1,0 +1,52 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <!--<ion-title>login</ion-title>-->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card class="ion-no-margin">
+    <div class="image-container">
+    <ion-img src="assets/cima-removebg-preview.png"></ion-img>
+    <ion-img src="assets/mk-preto.png" class="logo"></ion-img>
+  </div>
+    
+    <ion-card-header>
+      <ion-card-title>
+        Bem-vindo
+      </ion-card-title>
+      <ion-card-subtitle class="ion-text-lowercase">Torne-se a rainha da sua própria
+         jornada de beleza!
+      </ion-card-subtitle>
+
+    </ion-card-header>
+
+    <ion-card-content>
+      <div class="signin-btns">
+        <ion-button size="big" fill="solid" shape="round" class="loginbtn" (click)="goLogin()">
+          Entrar
+        </ion-button>
+        <ion-button class="signinbtn" size="big" fill="outline" shape="round" color="dark" (click)="goSignin()">Cadastre-se</ion-button>
+      </div>
+
+      <div class="text-tag">
+        <span>Redes Sociais da Makeup Queen</span>
+      </div>
+
+      <div class="social-btns">
+        <ion-button fill="clear" class="facebookbtn ion-no-padding">
+          <ion-img src="assets/facebook.png"></ion-img>
+        </ion-button>
+        <ion-button fill="clear" class="tiktokbtn ion-no-padding">
+          <ion-img src="assets/tiktok.png"></ion-img>
+        </ion-button>
+        <ion-button fill="clear" class="instagrambtn ion-no-padding">
+          <ion-img src="assets/instagram.png"></ion-img>
+        </ion-button>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-menu-button *ngIf="!modal" (click)="retorno()"></ion-menu-button>
+    </ion-buttons>
+    <ion-button color="light" *ngIf="modal" slot="end" (click)="fecharModal()">Fechar</ion-button>
+    <ion-title>{{ visualizar ? 'Visualizar' : 'Agendar' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form #f="ngForm" (ngSubmit)="enviando(f)">
+    <ion-item>
+      <ion-label position="floating" style="visibility: hidden;">Id Usuário</ion-label>
+      <ion-input [(ngModel)]="dados.idUsuario" name="idUsuario" style="visibility: hidden;"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-select [(ngModel)]="dados.funcionario" placeholder="Selecione o funcionário" name="funcionario" [disabled]="visualizar">
+        <ion-select-option *ngFor="let funcionario of funcionarios" [value]="funcionario.nomeUsuario">{{ funcionario.nomeUsuario }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Data</ion-label>
+      <ion-input [(ngModel)]="dados.dataAgenda" name="dataAgenda" [disabled]="visualizar" (ionInput)="formatarData()" (keypress)="validarNumeros($event)" maxlength="10"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Horário</ion-label>
+      <ion-input [(ngModel)]="dados.horario" name="horario" [disabled]="visualizar" (ionInput)="formatarHorario()" (keypress)="validarNumeros($event)" maxlength="5"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-select aria-label="fruit" placeholder="Selecione o serviço" [(ngModel)]="dados.maquiagem" name="maquiagem" [disabled]="visualizar" (ionChange)="atualizarValorMaquiagem()">
+        <ion-select-option *ngFor="let maquiagem of maquiagens" [value]="maquiagem.nomeMaquiagem">{{ maquiagem.nomeMaquiagem }}</ion-select-option>
+      </ion-select>      
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Valor</ion-label>
+      <ion-input [(ngModel)]="dados.valor" name="valor" disabled></ion-input>
+    </ion-item>    
+    <ion-item>
+      <ion-select aria-label="fruit" placeholder="Selecione o tipo de pagamento" [(ngModel)]="dados.pagamento" name="pagamento" [disabled]="visualizar">
+        <ion-select-option value="Boleto">Boleto</ion-select-option>
+        <ion-select-option value="Credito">Crédito</ion-select-option>
+        <ion-select-option value="Debito">Débito</ion-select-option>
+        <ion-select-option value="Pix">Pix</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Situacao</ion-label>
+      <ion-input [(ngModel)]="dados.situacao" name="situacao" disabled ></ion-input>
+    </ion-item>
+    <ng-container *ngIf="botao">
+    <ion-button color="light" id="agendarBtn" fill="outline" expand="block" type="submit" (click)="enviarAgendamento(f)">Agendar</ion-button>
+  </ng-container>
+    <ng-container *ngIf="!botao">
+    <ion-button color="light" fill="outline" expand="block" type="submit" [disabled]="!pagamento">Efetuar pagamento</ion-button>
+  </ng-container>
+</form>
+</ion-content>

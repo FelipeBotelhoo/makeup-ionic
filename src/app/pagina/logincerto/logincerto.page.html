@@ -1,0 +1,54 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <!--<ion-title>logincerto</ion-title>-->
+  </ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button defaulthref="login" text=""></ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content>
+  <ion-card class="ion-no-margin">
+    <ion-img src="assets/header1.png"></ion-img>
+    <ion-img src="assets/mk-preto.png" class="logo"></ion-img>
+    <ion-card-content>
+      <form #f="ngForm" (ngSubmit)="logar(f)">
+      <div class="wrapform">
+        <ion-item>
+          <ion-icon name="mail-outline"></ion-icon>
+          <ion-input type="text" [(ngModel)]="dados.emailUsuario" name="emailUsuario" placeholder="Email" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <ion-input type="password" [(ngModel)]="dados.senhaUsuario" name="senhaUsuario" placeholder="Senha" required></ion-input>
+        </ion-item>
+      </div>
+    
+      <div class="password_forgot">
+        <ion-button fill="clear" class="ion-no-padding">Esqueceu sua senha?</ion-button>
+      </div>
+      <div class="sign-btn-wrap">
+        <ion-button color="light" shape="round" type="submit" fill="solid" class="sign-btn">Entrar</ion-button>
+      </div>
+    </form>
+
+      <div class="text-tag">
+        <span>Redes Sociais da Makeup Queen</span>
+      </div>
+
+      <div class="social-btns">
+        <ion-button fill="clear" class="facebookbtn ion-no-padding">
+          <ion-img src="assets/facebook.png"></ion-img>
+        </ion-button>
+        <ion-button fill="clear" class="tiktokbtn ion-no-padding">
+          <ion-img src="assets/tiktok.png"></ion-img>
+        </ion-button>
+        <ion-button fill="clear" class="instagrambtn ion-no-padding">
+          <ion-img src="assets/instagram.png"></ion-img>
+        </ion-button>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

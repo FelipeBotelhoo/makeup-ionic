@@ -7,6 +7,14 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
-  constructor() {}
+  nomes:any[]=[];
+
+  constructor() {
+    this.nomes = [
+      {
+        name: "Usuário"
+      }
+    ];
+  }
 
 }

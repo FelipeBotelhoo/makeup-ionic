@@ -1,0 +1,79 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <!--<ion-title>signin</ion-title>-->
+  </ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button defaulthref="login" text=""></ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content class="bg-color">
+
+  <ion-card class="ion-no-margin">
+
+    <ion-card-header>
+      <ion-card-title>
+        Cadastre-se
+      </ion-card-title>
+      <ion-card-subtitle>
+        Crie a sua conta preenchendo o formulário abaixo
+      </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-icon name="person-outline"></ion-icon>
+
+        <ion-input name="nome" type="text" placeholder="Nome" [(ngModel)]="nome">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="mail-outline"></ion-icon>
+
+        <ion-input name="email" type="text" placeholder="Email" [(ngModel)]="email">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="call-outline"></ion-icon>
+
+        <ion-input name="telefone" type="text" placeholder="Telefone" [(ngModel)]="telefone" (ionChange)="formatarTelefone()">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="id-card-outline"></ion-icon>
+        <ion-input name="cpf" type="text" placeholder="CPF" [(ngModel)]="cpf" (ionChange)="formatarCpf()">
+
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <ion-input name="senha" type="password" placeholder="Senha" [(ngModel)]="senha">
+          
+        </ion-input>
+      </ion-item>
+
+      <div class="sign-btn-wrap">
+        <ion-button color="light" shape="round" fill="solid" class="sign-btn" (click)="cadastrar()">Cadastrar</ion-button>
+      </div>
+
+      <div class="text-tag">
+        <span>Redes Sociais da Makeup Queen</span>
+      </div>
+
+      <div class="social-btns">
+        <ion-button fill="clear" class="facebookbtn ion-no-padding">
+          <ion-img src="assets/facebook.png"></ion-img>
+        </ion-button>
+        <ion-button fill="clear" class="tiktokbtn ion-no-padding">
+          <ion-img src="assets/tiktok.png"></ion-img>
+        </ion-button>
+        <ion-button fill="clear" class="instagrambtn ion-no-padding">
+          <ion-img src="assets/instagram.png"></ion-img>
+        </ion-button>
+      </div>
+
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

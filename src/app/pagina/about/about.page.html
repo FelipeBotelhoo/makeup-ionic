@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-back-button defaulthref="login" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Sobre</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card-content>Bem-vindo ao Makeup Queen, o seu destino para realçar sua beleza e se sentir como uma verdadeira rainha! Nosso aplicativo foi desenvolvido com o objetivo de proporcionar a você uma experiência única de maquiagem, permitindo que você se cadastre e agende serviços com nossa equipe de maquiadoras altamente qualificadas.
+<br><br>
+    Nossa equipe é composta por profissionais talentosas e apaixonadas por maquiagem, que adquiriram seus conhecimentos e habilidades no renomado SENAC Nova Iguaçu, localizado no Rio de Janeiro. O SENAC é reconhecido por oferecer treinamentos de excelência na área de beleza e estética, e nossas maquiadoras se destacaram nesse ambiente de aprendizado inspirador.
+    <br><br>
+    No Makeup Queen, valorizamos a individualidade de cada cliente e buscamos realçar a beleza única de cada pessoa. Nossas maquiadoras estão sempre atualizadas com as últimas tendências do mundo da maquiagem, além de possuírem um profundo conhecimento sobre técnicas e produtos de alta qualidade. Elas estão prontas para criar looks personalizados de acordo com suas preferências e ocasiões especiais.
+    <br><br>
+    Com o nosso aplicativo, você pode se cadastrar de forma rápida e fácil, fornecendo as informações necessárias para que possamos conhecer melhor suas necessidades e preferências. Além disso, você terá acesso a um calendário de disponibilidade de nossas maquiadoras, permitindo que você agende os serviços de maquiagem com comodidade e flexibilidade, no horário que melhor se adequar à sua agenda.
+    <br><br>
+    No Makeup Queen, queremos que cada cliente se sinta especial e confiante. Estamos comprometidos em proporcionar uma experiência de maquiagem excepcional, utilizando produtos de alta qualidade e técnicas profissionais. Seja para uma ocasião especial, um evento importante ou simplesmente para realçar sua beleza no dia a dia, estamos aqui para ajudar você a se sentir verdadeiramente radiante.
+    <br><br>
+    Baixe agora mesmo o aplicativo Makeup Queen e descubra um mundo de possibilidades para realçar sua beleza interior e exterior. Estamos ansiosas para tornar você a verdadeira rainha da maquiagem!</ion-card-content>
+    <ion-grid class="table-grid">
+      <ion-row class="table-header">
+        <ion-col>
+          <h4>Serviços</h4>
+        </ion-col>
+        <ion-col>
+          <h4>Preços</h4>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row class="table-row" *ngFor="let maquiagem of maquiagens">
+        <ion-col>{{maquiagem.nomeMaquiagem}}</ion-col>
+        <ion-col>{{maquiagem.valor}}</ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>

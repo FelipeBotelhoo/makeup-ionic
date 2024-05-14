@@ -1,0 +1,22 @@
+ion-content {
+    --ion-background-color: #FFFFFF;
+    /*--background: url('../assets/fundo.jpg') no-repeat center center fixed;
+    background-size: cover; contain 100% 100%*/
+}
+
+ion-title{
+    text-align: center;
+}
+
+ion-item{
+    color: rgb(76, 74, 74);
+    --border-color: silver;
+    --highlight-color-focused:#FF676D;
+    --padding-start:0;
+    --inner-padding-end:0;
+    font-size: 18px;
+    ion-icon{
+        padding-right: 6px;
+        font-size: 22px;
+    }
+}

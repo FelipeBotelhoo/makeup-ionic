@@ -1,0 +1,87 @@
+ion-content {
+    --ion-background-color: #FFFFFF;
+    /*--background: url('../assets/fundo.jpg') no-repeat center center fixed;
+    background-size: cover; contain 100% 100%*/
+}
+
+ion-footer{
+    text-align: center;
+}
+
+ion-fab {
+    position: fixed;
+    right: 43%;
+    top: 90%;
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.dark-card {
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+    color: #fff;
+}
+
+/*ng-container {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    --ion-background-image: url('https://images.pexels.com/photos/1339340/pexels-photo-1339340.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0.7);
+    /* Ajuste o valor de 0.7 para tornar a imagem mais escura ou mais clara 
+    z-index: -1;
+    border-radius: 10px;
+}*/
+
+ion-card-title {
+    font-weight: bold;
+    font-size: 22px;
+    margin-top: 8px;
+    color: #FFFFFF;
+    width: 300px;
+}
+
+ion-card {
+    height: 70px;
+    
+    ion-card-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      
+      ion-icon {
+        font-size: 28px;
+        margin-bottom: 8px;
+        margin-top: -10px;
+      }
+      
+      p {
+        font-size: 14px;
+        text-align: center;
+      }
+    }
+  }
+  
+  .genre-cards {
+    ion-col {
+      ion-card {
+        margin: 8px;
+      }
+    }
+  }
+  
